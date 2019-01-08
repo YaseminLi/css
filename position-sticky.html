@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>position-sticky</title>
+    <style type="text/css">
+    /* https://developer.mozilla.org/zh-CN/docs/Web/CSS/position */
+        * {
+            /* box-sizing定义盒子模型的宽度
+      border-box 
+      width = border + padding + 内容的  width，
+      height = border + padding + 内容的 height
+      content-box
+      width = 内容的宽度，height = 内容的高度。宽度和高度都不包含内容的边框（border）和内边距（padding）。
+      https://developer.mozilla.org/zh-CN/docs/Web/CSS/box-sizing */
+            box-sizing: border-box;
+        }
+
+        dl {
+            border-bottom: 1px solid #989EA4;
+            border-top: 1px solid #717D85;
+            background: #B8C1C8;
+            /* bold粗体 18px/21px=size:18;line-hight:21; */
+            font: bold 18px/21px Helvetica, Arial, sans-serif;
+            color: #FFF;
+            margin: 0;
+            padding: 2px 0 0 0;
+            position: sticky;
+            position: -webkit-sticky;
+            top: -1px;
+        }
+
+        dd {
+           background:white;
+           color: black;
+            font: bold 20px/45px Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0 0 0 12px;
+            /*  white-space如何处理元素中的空白https://developer.mozilla.org/zh-CN/docs/Web/CSS/white-space */
+            white-space: nowrap;
+            
+        }
+
+        dd+dd {
+            border-top: 1px solid #CCC
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <!-- dl标签，definition list 定义列表 -->
+        <!-- <dt> 定义列表中的项目 -->
+        <!-- <dd> 描述列表中每个项目-->
+        <dl>
+            <dt>A</dt>
+            <dd>Andrew W.K.</dd>
+            <dd>Apparat</dd>
+            <dd>Arcade Fire</dd>
+            <dd>At The Drive-In</dd>
+            <dd>Aziz Ansari</dd>
+        </dl>
+        <dl>
+            <dt>C</dt>
+            <dd>Chromeo</dd>
+            <dd>Common</dd>
+            <dd>Converge</dd>
+            <dd>Crystal Castles</dd>
+            <dd>Cursive</dd>
+        </dl>
+        <dl>
+            <dt>E</dt>
+            <dd>Explosions In The Sky</dd>
+        </dl>
+        <dl>
+            <dt>T</dt>
+            <dd>Ted Leo & The Pharmacists</dd>
+            <dd>T-Pain</dd>
+            <dd>Thrice</dd>
+            <dd>TV On The Radio</dd>
+            <dd>Two Gallants</dd>
+        </dl>
+    </div>
+</body>
+
+</html>
