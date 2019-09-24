@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    .img-container {
+        background-image: url('1.png');
+    }
+</style>
+</style>
+
+<body>
+    <!-- 元素的样式设置成display: none，背景和标签上的图片都会被加载，但不会渲染 -->
+    <!-- <div class="img-container" style="display:none"></div>
+    <img src="2.png" style="display:none"> -->
+
+    <!-- 父元素的样式设置成display: none，背景上图片不会被加载，标签上的图片会加载 -->
+    <div style="display:none">
+            <div class="img-container"></div>
+            <img src="2.png">
+            
+</body>
+
+</html>
