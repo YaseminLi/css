@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .demo {
+            background-image: url('https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1587811446522&di=8d8a49bd5a7c05e1a005ef65d6041076&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2Fb912bf96dc19b3b23530ae2259b60eb6cf70083f6680b-H9l0ri_fw658');
+            padding-top: 40%;
+            background-repeat: no-repeat;
+            margin: 10px;
+        }
+
+        .one {
+            background-size: 80%;
+            background-position: center;
+            /* background-attachment: fixed; */
+        }
+
+        .two {
+            background-size: 100% 100%
+        }
+
+        .three {
+            background-size: cover
+        }
+
+        .four {
+            background-size: contain;
+            /* background-attachment: fixed; */
+            background-position: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div>background-size: 100%;相当于</div>
+    <div class="demo one"></div>
+    <div>background-size: 100% 100%</div>
+    <div class="demo two"></div>
+    <div>background-size: cover</div>
+    <div class="demo three"></div>
+    <div>background-size: contain</div>
+    <div class="demo four"></div>
+</body>
+
+</html>

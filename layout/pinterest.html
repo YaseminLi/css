@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pinterest</title>
+    <style>
+        .container {
+            position: relative;
+        }
+
+        .item {
+            background: pink;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <p>瀑布流布局：
+        瀑布流布局的特点是等宽不等高。
+        为了让最后一行的差距最小，从第二行开始，需要将图片放在第一行最矮的图片下面，以此类推。
+        父元素设置为相对定位，图片所在元素设置为绝对定位。然后通过设置 top 值和 left 值定位每个元素。
+    </p> -->
+</body>
+<script>
+    const windowWidth = window.innerWidth // 显示区域的宽度
+    const itemWidth = 200 // item显示的宽度
+    const columns = Math.floor(windowWidth / itemWidth) // 可显示几列
+    const gap = (windowWidth - columns * itemWidth) / columns / 2  // 列之间的gap/2，列的左右都要加
+    const width = itemWidth + gap * 2 // 每列的宽度
+    const heightArr = [] // 高度数组
+    const container = document.createElement('div')
+    container.id = 'container'
+    for (let i = 0; i < 8; i++) {
+        const item = document.createElement('div')
+        item.className = 'item'
+        item.innerText = i
+        item.style.width = itemWidth + 'px'
+        item.style.margin = `10px ${gap}px`
+        const h = Math.random() * 300
+        item.style.position = 'absolute'
+        item.style.height = h + 'px'
+        item.style.lineHeight = h + 'px'
+        if (i < columns) {
+            // 第一排顶着最上面放就好
+            heightArr[i] = h + 20 //20 为加的上下margin
+            item.style.top = 0
+            item.style.left = width * i + 'px'
+        } else {
+            // 第一排往后，将item放到高度最小的那列去
+            // 找高度最小的列数
+            let minIndex = 0
+            let min = heightArr[0]
+            for (let j = 0; j < columns; j++) {
+                if (heightArr[j] < min) {
+                    minIndex = j
+                    min = heightArr[j]
+                }
+            }
+            console.log(minIndex);
+
+            heightArr[minIndex] = min + h + 20 // 更新高度数组
+            item.style.top = min + 'px'
+            item.style.left = width * minIndex + 'px'
+        }
+        container.appendChild(item)
+    }
+    document.getElementsByTagName('body')[0].append(container)
+</script>
+
+</html>
